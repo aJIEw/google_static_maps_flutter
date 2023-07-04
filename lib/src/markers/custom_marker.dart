@@ -4,11 +4,13 @@ class CustomMarker extends Marker {
   /// Icon URL address
   final String icon;
   final MarkerAnchor? anchor;
+  final int scale;
 
   const CustomMarker({
     required List<Location> locations,
     required this.icon,
     this.anchor,
+    this.scale = 1,
   }) : super._(locations);
 
   @override
@@ -23,6 +25,8 @@ class CustomMarker extends Marker {
     String string = "";
 
     if (anchor != null) string += "anchor:${anchor!.value}$_separator";
+
+    if (scale > 1) string += "scale:$scale$_separator";
 
     string += "icon:$icon$_separator";
 

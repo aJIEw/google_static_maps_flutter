@@ -17,6 +17,7 @@ abstract class Marker implements EncodableUrlPart {
   const factory Marker.custom({
     required List<Location> locations,
     required String icon,
+    int scale,
     MarkerAnchor? anchor,
   }) = CustomMarker;
 
